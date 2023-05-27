@@ -46,17 +46,16 @@ const App = () => {
     fetchImages();
   }, [page, searchTerm]);
 
-  const handleScroll = () => {
-    const isScrolledToBottom =
-      window.innerHeight + window.scrollY >= document.body.offsetHeight;
-
-    if (isScrolledToBottom && !isLoading && !isFetching) {
-      setIsFetching(true);
-      setPage((prevPage) => prevPage + 1);
-    }
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const isScrolledToBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+      if (isScrolledToBottom && !isLoading && !isFetching) {
+        setIsFetching(true);
+        setPage((prevPage) => prevPage + 1);
+      }
+    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
