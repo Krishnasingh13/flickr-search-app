@@ -10,7 +10,6 @@ const LoadingSpinner = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent animate-pulse"></div>
           <div className="absolute bottom-4 left-4 text-left">
-            <h1 className="text-lg font-semibold text-white"></h1>
           </div>
         </div>
       ))}
